@@ -1,0 +1,5 @@
+<View controllerName="com.UI5Starter.Application.App.RootApp" height="100%" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+  
+    <App id="masterAppView" />
+
+</View>

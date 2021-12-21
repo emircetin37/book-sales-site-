@@ -1,0 +1,107 @@
+<mvc:View xmlns:table="sap.ui.table" xmlns:unified="sap.ui.unified" xmlns:core="sap.ui.core" controllerName="com.UI5Starter.Application.Admin.controller.Admin" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns="sap.m">
+
+    <SplitApp>
+        <detailPages>
+            <Page>
+
+                <Page title="Yazar Ekle" id="author">
+                    <Input id="authorInput" value="{/author/yazarad}" width="300px"></Input>
+                    <!-- <Button id="saveAuthor" press="saveAuthor" text="Kaydet" type="Accept"></Button> -->
+                    <Button id="authorSave" press="authorAddDialog" text="Yazar Ekle"></Button>
+                    <List id="authorList" items="{/authorList}" mode="SingleSelectMaster">
+
+
+                        <StandardListItem title="{yazarid}" description="{yazarad}" />
+
+
+                    </List>
+                    <Button id="deleteAuthor" press="deleteAuthor" text="Sil" type="Reject"></Button>
+                    <Button id="editAuthor" press="editAuthor" text="Düzenle"></Button>
+                    <Button id="editSaveAuthor" press="editSaveAuthor" text="Düzenlenen Yazarı Kaydet"></Button>
+                </Page>
+
+
+                <Page id="category" title="Kategori Ekle">
+                    <Input id="categoryInput" value="{/category/kategoriadi}" width="300px"></Input>
+                    <!-- <Button id="saveCategory" text="Kaydet" press="saveCategory"></Button> -->
+                    <Button press="categoryAddDialog" id="categorySave" text="Kategori Ekle"></Button>
+                    <List id="categoryList" items="{/categoryList}" mode="SingleSelectMaster">
+
+
+                        <StandardListItem title="{kategoriID}" description="{kategoriAdi}" />
+
+
+                    </List>
+                    <Button id="deleteCategory" press="deleteCategory" text="Sil" type="Reject"></Button>
+                    <Button id="editCategory" press="editCategory" text="Düzenle"></Button>
+                    <Button id="editSaveCategory" press="editSaveCategory" text="Düzenlenen Kategorileri Kaydet"></Button>
+
+                </Page>
+
+              
+
+                <Page id="books" title="Kitap İşlemleri">
+                    <Button icon="sap-icon://add" press="onSaveDialog" ></Button>
+                    <Button icon="sap-icon://delete" press="deleteBook"></Button>
+                    <Button icon="sap-icon://edit" press="onEditDialog"></Button>
+
+                    <Table selectionChange="deneme" mode="SingleSelectMaster" width="100%" id="bookList" inset="false" items="{path: '/bookList'}">
+
+                        <columns>
+                            <Column>
+                                <Text text="Kitap Adı" />
+                            </Column>
+                            <Column>
+                                <Text text="Kitap Resmi" />
+                            </Column>
+                            <Column>
+                                <Text text="Fiyat" />
+                            </Column>
+                            <Column>
+                                <Text text="Sayfa" />
+                            </Column>
+                            <Column>
+                                <Text text="Ebat" />
+                            </Column>
+                            <Column>
+                                <Text text="Yazar" />
+                            </Column>
+                            <Column>
+                                <Text text="Kategori" />
+                            </Column>
+                            <Column>
+                                <Text text="Stok"></Text>
+                            </Column>
+                            
+                        </columns>
+                        <items>
+                            <ColumnListItem vAlign="Middle">
+                                <cells>
+                                    <Text text="{kitapad}" />
+                                    <Image width="100%" src="{photo}"></Image>
+                                    <Text text="{kitapfiyat}" />
+                                    <Text text="{sayfa}" />
+                                    <Text text="{ebat}" />
+                                    <Text text="{yazarad}" />
+                                    <Text text="{kategoriAdi}" />
+                                    <Text text="{stok}"/>
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+                </Page>
+
+
+            </Page>
+        </detailPages>
+        <masterPages>
+
+            <Page title="Detay Kitap Admin Paneli" class="sapUiContentPadding">
+                <Button press="addAuthor" text="Yazar Ekle"></Button>
+                <Button press="addCategory" text="Kategori Ekle"></Button>
+                <Button press="addBook" text="Kitap İşlemleri"></Button>
+                <Button icon="sap-icon://home" press="goToAnasayfa" text="Anasayfaya Dön"></Button>
+            </Page>
+        </masterPages>
+    </SplitApp>
+</mvc:View>

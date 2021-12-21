@@ -1,0 +1,36 @@
+<core:FragmentDefinition xmlns:table="sap.ui.table" xmlns:unified="sap.ui.unified" xmlns:core="sap.ui.core" controllerName="com.UI5Starter.Application.Admin.controller.Admin" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns="sap.m">
+    <Dialog>
+        <Label text="Kitabın Adı"></Label>
+        <Input value="{/book/kitapad}" class="sapUiLargePadding"></Input>
+
+        <Text class="sapUiLargeMarginBeginEnd" text="Yazarın Adı"></Text>
+        <Select change="changeAuthorList" items="{path:'/authorList'}" id="authorName">
+            <core:Item key="{yazarid}" text="{yazarad}"></core:Item>
+        </Select>
+
+        <Text class="sapUiLargeMarginBeginEnd" text="Kategori Adı"></Text>
+        <Select change="changeCategoryList" items="{path :'/categoryList'}" id="categoryName">
+            <core:Item key="{kategoriID}" text="{kategoriAdi}"></core:Item>
+        </Select>
+
+        <Input value="{/book/kitapfiyat}" id="" type="Number" description="Fiyat"></Input>
+        <Input value="{/book/stok}" type="Number" description="Stok"></Input>
+        <Input value="{/book/sayfa}" type="Number" description="Sayfa Sayısı"></Input>
+        <Input value="{/book/ebat}" description="Ebat"></Input>
+        <Input value="{/book/yayinevi}" description="Yayın Evi"></Input>
+        <TextArea value="{/book/aciklama}" valueState="Success" placeholder="Kitabın Açıklaması" width="100%" />
+        <unified:FileUploader change="fileChange" id="fileUploader"></unified:FileUploader>
+        <Button id="saveBook" press="saveBook" text="Kaydet"></Button>
+
+
+        <Button id="deleteBook" press="deleteBook" text="Sil" type="Reject"></Button>
+        <Button id="editBook" press="editBook" text="Düzenle"></Button>
+        <Button id="editSaveBook" press="editSaveBook" text="Düzenlenen Kitabı Kaydet"></Button>
+
+        <Bar>
+            <contentRight>
+                <Button press="closeDialogBook" text="Kapat"></Button>
+            </contentRight>
+        </Bar>
+    </Dialog>
+</core:FragmentDefinition>

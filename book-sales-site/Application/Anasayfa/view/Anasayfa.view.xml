@@ -1,0 +1,87 @@
+<mvc:View controllerName="com.UI5Starter.Application.Anasayfa.controller.Anasayfa" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.f" xmlns:grid="sap.ui.layout.cssgrid" xmlns:t="sap.tnt" xmlns:wt="com.UI5Starter.Application.Anasayfa.control">
+
+
+    <Page title="Anasayfa" class="sapUiContentPadding">
+
+        <Bar>
+            <contentRight>
+                <Button icon="sap-icon://cart-full" width="230px" press=".onDefaultDialogPress" class="sapUiMarginTop" ariaHasPopup="Dialog" />
+
+                <Button icon="sap-icon://visits" id="login" press="login" text="Giriş Yap" />
+                <Button icon="sap-icon://account" id="register" press="register" text="Kayıt Ol" />
+                <Button id="user" icon="sap-icon://customer" press="user" text="Kullanıcı" />
+                <Button icon="sap-icon://log" id="logOut" press="logOut" text="Çıkış Yap" />
+            </contentRight>
+        </Bar>
+
+
+        <SplitApp>
+
+
+            <masterPages>
+
+                <Page id="anasayfaCat"  title="Kategoriler" backgroundDesign="Solid">
+                    <List selectionChange="allCategory" mode="SingleSelectMaster">
+                        <StandardListItem icon="sap-icon://minimize" title="Tümü"/>
+                    </List>
+                    <List id="listCategory" selectionChange="changeCategory" items="{/categoryList}" mode="SingleSelectMaster">
+
+
+                        <StandardListItem icon="sap-icon://minimize" title="{kategoriAdi}" />
+
+
+                    </List>
+
+                </Page>
+            </masterPages>
+
+
+            <detailPages>
+
+                <Page id="anasayfaProduct" title="Kitaplar" backgroundDesign="Solid" class="sapUiContentPadding">
+
+                    <!-- <List id="listBook" items="{/bookList}" mode="SingleSelectMaster">
+
+
+                        <StandardListItem title="{kitapid}" description="{kitapad}" />
+
+
+                    </List> -->
+
+
+                    <f:GridList items="{/bookList}">
+                        <f:customLayout>
+                            <grid:GridBoxLayout boxWidth="15rem" />
+                        </f:customLayout>
+
+
+                        <f:GridListItem>
+                            <VBox height="100%" justifyContent="SpaceBetween">
+
+
+                                <VBox class="sapUiSmallMargin">
+                                    <Title text="{kitapad}" />
+                                    <Image width="200px" src="{photo}"></Image>
+                                    <Label wrapping="true" class="sapUiTinyMarginBottom" />
+                                    <Text text="Yazar : {yazarad}"></Text>
+                                    <Label text="Ebat : {ebat}" />
+                                    <Label text="Açıklama : {aciklama}" />
+                                    <Text text="Fiyat : {kitapfiyat} TL" />
+                                </VBox>
+                                <OverflowToolbar design="Solid" class="sapContrast">
+                                    <ToolbarSpacer />
+                                    <Button press="sepeteEkle" text="Sepete Ekle" type="Transparent" />
+                                </OverflowToolbar>
+                            </VBox>
+
+
+                        </f:GridListItem>
+
+                    </f:GridList>
+                </Page>
+
+            </detailPages>
+
+        </SplitApp>
+    </Page>
+</mvc:View>

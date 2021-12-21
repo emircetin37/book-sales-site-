@@ -1,0 +1,7 @@
+<mvc:View controllerName="com.UI5Starter.Application.Kitaplar.controller.Kitaplar"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page title="Kitaplar" class="sapUiContentPadding">
+        
+    </Page>
+</mvc:View>

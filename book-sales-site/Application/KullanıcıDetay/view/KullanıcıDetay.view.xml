@@ -1,0 +1,19 @@
+<mvc:View xmlns:table="sap.ui.table" controllerName="com.UI5Starter.Application.KullanıcıDetay.controller.KullanıcıDetay" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
+
+
+    <Page title="Kulanıcı Bilgileri">
+        <Bar>
+            <contentRight>
+                <Button icon="sap-icon://home" press="anasayfa" text="Anasayfa"></Button>
+                <Button id="admin" press="goToAdmin" icon="sap-icon://key-user-settings" text="Admin Paneli"></Button>
+            </contentRight>
+        </Bar>
+        <List items="{/activeUser}">
+            <StandardListItem title="Ad Soyad : {adsoyad}" description="Kullanıcı Adı : {kullaniciadi} | E-posta: : {eposta} | Kullanıcı Rol : {rolad} | Telefon : {telefon}"></StandardListItem>
+        </List>
+
+
+    </Page>
+
+
+</mvc:View>

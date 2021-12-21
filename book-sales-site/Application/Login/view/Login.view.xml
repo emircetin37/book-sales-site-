@@ -1,0 +1,14 @@
+<mvc:View controllerName="com.UI5Starter.Application.Login.controller.Login" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+    <Page title="Giriş Yap" class="sapUiContentPadding">
+        <Bar>
+            <contentRight>
+                <Button icon="sap-icon://home" press="anasayfa" text="Anasayfa"></Button>
+            </contentRight>
+        </Bar>
+        <Label text="Kullanıcı Adı,E-Posta veya Telefon Numarası"></Label>
+        <Input value="{/userLogin/name}"></Input>
+        <Label text="Parola"></Label>
+        <Input value="{/userLogin/password}" type="Password"></Input>
+        <Button press="login" text="Giriş Yap"></Button>
+    </Page>
+</mvc:View>

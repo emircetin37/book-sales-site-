@@ -1,0 +1,18 @@
+<mvc:View controllerName="com.UI5Starter.Application.SiparişBaşarılı.controller.SiparişBaşarılı" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.f" xmlns:grid="sap.ui.layout.cssgrid" xmlns:t="sap.tnt">
+    <?xml-stylesheet type="text/css" href="Rule.css"?>
+    <Page title="SİPARİŞ BAŞARILI">
+        <Bar>
+            <contentRight>
+                <Button press="anasayfa" text="Anasayfa"></Button>
+            </contentRight>
+        </Bar>
+
+        <VBox alignItems="Center">
+            <Text class="sapUiLargeMargin" text="SİPARİŞİNİZ BAŞARIYLA OLUŞTURULMUŞTUR :)"></Text>
+        </VBox>
+        <VBox alignItems="Center">
+            <Text class="sapUiLargeMargin" text="İyi Alışverişler"></Text>
+        </VBox>
+
+    </Page>
+</mvc:View>

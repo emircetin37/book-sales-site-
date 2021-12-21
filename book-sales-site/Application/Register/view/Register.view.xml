@@ -1,0 +1,28 @@
+<mvc:View controllerName="com.UI5Starter.Application.Register.controller.Register" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+    <Page title="Kayıt Ol" class="sapUiContentPadding">
+        <Bar>
+            <contentRight>
+                <Button icon="sap-icon://home" press="anasayfa" text="Anasayfa"></Button>
+            </contentRight>
+        </Bar>
+        <Label text="Kullanıcı Adı"></Label>
+        <Input value="{/userInformation/userName}" type="Text"></Input>
+
+        <Label text="Ad Soyad"></Label>
+        <Input value="{/userInformation/name}" type="Text"></Input>
+
+        <Label text="E-Posta"></Label>
+        <Input value="{/userInformation/mail}" type="Email"></Input>
+
+        <Label text="Telefon"></Label>
+        <Input value="{/userInformation/number}" type="Number"></Input>
+
+        <Label text="Parola"></Label>
+        <Input value="{/userInformation/password}" type="Password"></Input>
+
+        <Label text="Parola Tekrar"></Label>
+        <Input value="{/userInformation/againPassword}" type="Password"></Input>
+
+        <Button press="saveUser" text="Kayıt Ol"></Button>
+    </Page>
+</mvc:View>
